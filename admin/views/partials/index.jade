@@ -1,0 +1,36 @@
+//- .table-responsive
+//-     table.table.table-hover
+//-         thead
+//-             th Status
+//-             th Title
+//-             th Created
+//-             th Last Modified
+//-             th Edit | Delete
+//-         tbody
+//-             //- div(ng-repeat='post in posts')
+//-             tr(ng-repeat='post in posts')
+//-                 td {{post.meta.status}}
+//-                 td {{post.meta.title}}
+//-                 td {{post.meta.date}}
+//-                 td {{post.meta.modified}}
+//-                 td
+//-                     a(href='/admin/edit/{{post.id}}') Edit
+//-                     |
+//-                     a(href='/admin/delete/{{post.id}}') Delete
+//- p
+//-     button.btn(ng-click='addPost()') New Post
+
+hgroup.wrap
+    h1 Posts
+    nav
+        a.butt(href='/admin/add') Creat a new post
+section.wrap
+    ul.main.list
+        li(ng-repeat='post in posts')
+            //- a(href='/admin/edit/{{post.id}}')
+            a(href='/admin/edit/{{post.slug}}')
+                strong {{post.meta.title}}
+                span
+                    time {{post.meta.date}}
+                    em.status {{post.meta.status}}
+                p {{post.meta.description}}

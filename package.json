@@ -1,0 +1,30 @@
+{
+  "name": "justin-portfolio",
+  "description": "Justin's Portfolio Website",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "nodemailer": "~0.5.12",
+    "yamljs": "~0.1.4",
+    "passport": "~0.1.17",
+    "passport-twitter": "~1.0.2",
+    "passport-local": "~0.1.6",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "0.0.3",
+    "node-markdown": "~0.1.1",
+    "mongoose": "~3.8.8",
+    "slug": "~0.4.2",
+    "bases": "~0.2.0",
+    "rss": "~0.3.2",
+    "twit": "~1.1.14"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js"
+}

@@ -1,0 +1,19 @@
+extends publicLayout
+block body
+    .wrapper
+        include header
+        section.wrap
+            ul.main.list-public
+                for post in posts
+                    li
+                        a(href='/blog/' + post.slug)
+                            strong= post.meta.title
+                            span
+                                time= post.meta.date
+                            p= post.meta.description
+    include footer
+    script.
+        $('.sticky-nav').waypoint('sticky');
+
+    //- footer
+    //-     p.credits &copy;2014 Justin Glock

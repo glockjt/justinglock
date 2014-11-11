@@ -1,0 +1,35 @@
+!!!
+html(ng-app="myApp")
+    head
+        meta(charset='utf8')
+        base(href='/')
+        title Justin Glock | Admin
+        link(rel='stylesheet prefetch', href='http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css')
+        link(rel='stylesheet prefetch', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css')
+        //- link(rel='stylesheet', href='/css/app.css')
+        link(rel='stylesheet', href='/css/main.css')
+        //- link(rel='stylesheet', href='/css/responsive.css')
+        link(rel='stylesheet', href='/css/lemonade.css')
+        link(rel='stylesheet', href='/css/admin.css')
+        link(rel='stylesheet', href='/css/summernote.css')
+        link(rel='stylesheet', href='/css/responsive.css')
+    body
+        .wrapper
+            header(ng-controller="navCtrl")
+                .sticky-nav(sticky-nav)
+                    a#mobile-nav.menu-nav(href='#menu-nav')
+                    #logo
+                        a#goUp(href='/', target="_self", title='Justin Glock') Justin Glock
+
+                    nav#menu
+                        ul#menu-nav
+                            li
+                                a(href='/' target="_self") Home
+                            li()
+                                a(href='/blog' target="_self") Blog
+                            if user
+                                li()
+                                    a(href='/admin') Article List
+
+            block body
+        include public/footer

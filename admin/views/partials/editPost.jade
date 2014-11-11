@@ -1,0 +1,30 @@
+//- h2 Edit post
+//- label(for='title') Title:
+//- input(ng-model='form.meta.title', name='title')
+//- p Body:
+//- div(text-angular="text-angular" ng-model='form.content', cols='50', rows='15')
+//- p
+//-     div(ng-bind-html-unsafe="form.content")
+//- p
+//-     button(ng-click='editPost()') Edit Post
+fieldset.header
+    div.wrap
+        input(placeholder='Post Tile' autocomplete='off' autofocus='true' type='text' name='title' ng-model='form.meta.title')
+        aside.buttons
+            button.butt(ng-click='editPost()') Save
+            button.butt.red(ng-click='deletePost()') Delete
+            //- a.butt.delete.red(href='/admin/delete/{{form.filename}}') Delete
+        input.secondary(placeholder='Slug' autocomplete='off' type='text' name='slug' ng-model='form.filename')
+        input.secondary(placeholder='Feature Image (http://...)' type='text' name='featureImage' ng-model='form.meta.featureImage')
+        input.secondary(placeholder='Feature Image Credit' type='text' name='featureImageCredit' ng-model='form.meta.featureImageCredit')
+        input.secondary(placeholder='Tags (Hockey, Penguins, etc.)' type='text' name='tags' ng-model='form.meta.tags')
+        textarea(ng-model='form.meta.description' placeholder='Description' rows='2')
+        //- form(action="", method="post", enctype="multipart/form-data")
+        //-     input.image(type="file", name="displayImage")
+        select(ng-model='form.meta.status', ng-options='status.value as status.name for status in statuses')
+fieldset.main
+    div.wrap
+        //- div(text-angular="text-angular" ng-model='form.content', cols='50', rows='15')
+        //- div(summernote code="form.content")
+        form.mce-form
+            textarea(ui-tinymce ng-model='form.content')

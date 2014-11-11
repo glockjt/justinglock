@@ -1,0 +1,9 @@
+fieldset.main
+    div.wrap
+        h2 {{post.meta.title}}
+        p(ng-bind-html="post.content")
+        p
+          | Are you sure you want to delete this post?
+          br
+          button.butt(ng-click='deletePost()') Yes
+          button.butt.red(ng-click='home()') No thanks

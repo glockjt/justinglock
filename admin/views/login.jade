@@ -1,0 +1,18 @@
+//- extends layout
+
+block body
+    section.login.content
+        form(action='/login' method='post')
+            input(type='text' id='username' name='username' placeholder='username')
+            input(type='password' id='password' name='password' placeholder='password')
+            input.butt(type='submit' value='Login')
+            a.butt(href='/auth/twitter' target="_self")
+
+                i.fa.fa-twitter
+                |  Twitter Login
+                //- p
+                    //- button.butt(ng-click='submitPost()') Twitter Login
+                    a.butt(href='/auth/twitter' target="_self")
+
+                        i.fa.fa-twitter
+                        |  Twitter Login
